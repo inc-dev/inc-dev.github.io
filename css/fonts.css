@@ -1,0 +1,77 @@
+@font-face { src: url("../fonts/nunito/nunito-sans-v11-latin_cyrillic-200.woff2") format("woff2"); font-family: "nunito"; font-weight: 200; font-style: normal; }
+@font-face { src: url("../fonts/nunito/nunito-sans-v11-latin_cyrillic-200italic.woff2") format("woff2"); font-family: "nunito"; font-weight: 200; font-style: italic; }
+
+@font-face { src: url("../fonts/nunito/nunito-sans-v11-latin_cyrillic-300.woff2") format("woff2"); font-family: "nunito"; font-weight: 300; font-style: normal; }
+@font-face { src: url("../fonts/nunito/nunito-sans-v11-latin_cyrillic-300italic.woff2") format("woff2"); font-family: "nunito"; font-weight: 300; font-style: italic; }
+
+@font-face { src: url("../fonts/nunito/nunito-sans-v11-latin_cyrillic-regular.woff2") format("woff2"); font-family: "nunito"; font-weight: 400; font-style: normal; }
+@font-face { src: url("../fonts/nunito/nunito-sans-v11-latin_cyrillic-italic.woff2") format("woff2"); font-family: "nunito"; font-weight: 400; font-style: italic; }
+
+@font-face { src: url("../fonts/nunito/nunito-sans-v11-latin_cyrillic-600.woff2") format("woff2"); font-family: "nunito"; font-weight: 600; font-style: normal; }
+@font-face { src: url("../fonts/nunito/nunito-sans-v11-latin_cyrillic-600italic.woff2") format("woff2"); font-family: "nunito"; font-weight: 600; font-style: italic; }
+
+@font-face { src: url("../fonts/nunito/nunito-sans-v11-latin_cyrillic-700.woff2") format("woff2"); font-family: "nunito"; font-weight: 700; font-style: normal; }
+@font-face { src: url("../fonts/nunito/nunito-sans-v11-latin_cyrillic-700italic.woff2") format("woff2"); font-family: "nunito"; font-weight: 700; font-style: italic; }
+
+@font-face { src: url("../fonts/nunito/nunito-sans-v11-latin_cyrillic-800.woff2") format("woff2"); font-family: "nunito"; font-weight: 800; font-style: normal; }
+@font-face { src: url("../fonts/nunito/nunito-sans-v11-latin_cyrillic-800italic.woff2") format("woff2"); font-family: "nunito"; font-weight: 800; font-style: italic; }
+
+@font-face { src: url("../fonts/nunito/nunito-sans-v11-latin_cyrillic-900.woff2") format("woff2"); font-family: "nunito"; font-weight: 900; font-style: normal; }
+@font-face { src: url("../fonts/nunito/nunito-sans-v11-latin_cyrillic-900italic.woff2") format("woff2"); font-family: "nunito"; font-weight: 900; font-style: italic; }
+/**/
+@font-face { src: url("../fonts/roboto/roboto-v29-latin_cyrillic-100.woff2") format("woff2"); font-family: "roboto"; font-weight: 100; font-style: normal; }
+@font-face { src: url("../fonts/roboto/roboto-v29-latin_cyrillic-100italic.woff2") format("woff2"); font-family: "roboto"; font-weight: 100; font-style: italic; }
+
+@font-face { src: url("../fonts/roboto/roboto-v29-latin_cyrillic-300.woff2") format("woff2"); font-family: "roboto"; font-weight: 300; font-style: normal; }
+@font-face { src: url("../fonts/roboto/roboto-v29-latin_cyrillic-300italic.woff2") format("woff2"); font-family: "roboto"; font-weight: 300; font-style: italic; }
+
+@font-face { src: url("../fonts/roboto/roboto-v29-latin_cyrillic-regular.woff2") format("woff2"); font-family: "roboto"; font-weight: 400; font-style: normal; }
+@font-face { src: url("../fonts/roboto/roboto-v29-latin_cyrillic-italic.woff2") format("woff2"); font-family: "roboto"; font-weight: 400; font-style: italic; }
+
+@font-face { src: url("../fonts/roboto/roboto-v29-latin_cyrillic-500.woff2") format("woff2"); font-family: "roboto"; font-weight: 500; font-style: normal; }
+@font-face { src: url("../fonts/roboto/roboto-v29-latin_cyrillic-500italic.woff2") format("woff2"); font-family: "roboto"; font-weight: 500; font-style: italic; }
+
+@font-face { src: url("../fonts/roboto/roboto-v29-latin_cyrillic-700.woff2") format("woff2"); font-family: "roboto"; font-weight: 700; font-style: normal; }
+@font-face { src: url("../fonts/roboto/roboto-v29-latin_cyrillic-700italic.woff2") format("woff2"); font-family: "roboto"; font-weight: 700; font-style: italic; }
+
+@font-face { src: url("../fonts/roboto/roboto-v29-latin_cyrillic-900.woff2") format("woff2"); font-family: "roboto"; font-weight: 900; font-style: normal; }
+@font-face { src: url("../fonts/roboto/roboto-v29-latin_cyrillic-900italic.woff2") format("woff2"); font-family: "roboto"; font-weight: 900; font-style: italic; }
+/**/
+/**/
+@font-face { src: url("../fonts/open-sans/open-sans-v28-latin_cyrillic-300.woff2") format("woff2"); font-family: "open-sans"; font-weight: 300; font-style: normal; }
+@font-face { src: url("../fonts/open-sans/open-sans-v28-latin_cyrillic-300italic.woff2") format("woff2"); font-family: "open-sans"; font-weight: 300; font-style: italic; }
+
+@font-face { src: url("../fonts/open-sans/open-sans-v28-latin_cyrillic-regular.woff2") format("woff2"); font-family: "open-sans"; font-weight: 400; font-style: normal; }
+@font-face { src: url("../fonts/open-sans/open-sans-v28-latin_cyrillic-italic.woff2") format("woff2"); font-family: "open-sans"; font-weight: 400; font-style: italic; }
+
+@font-face { src: url("../fonts/open-sans/open-sans-v28-latin_cyrillic-500.woff2") format("woff2"); font-family: "open-sans"; font-weight: 500; font-style: normal; }
+@font-face { src: url("../fonts/open-sans/open-sans-v28-latin_cyrillic-500italic.woff2") format("woff2"); font-family: "open-sans"; font-weight: 500; font-style: italic; }
+
+@font-face { src: url("../fonts/open-sans/open-sans-v28-latin_cyrillic-600.woff2") format("woff2"); font-family: "open-sans"; font-weight: 600; font-style: normal; }
+@font-face { src: url("../fonts/open-sans/open-sans-v28-latin_cyrillic-600italic.woff2") format("woff2"); font-family: "open-sans"; font-weight: 600; font-style: italic; }
+
+@font-face { src: url("../fonts/open-sans/open-sans-v28-latin_cyrillic-700.woff2") format("woff2"); font-family: "open-sans"; font-weight: 700; font-style: normal; }
+@font-face { src: url("../fonts/open-sans/open-sans-v28-latin_cyrillic-700italic.woff2") format("woff2"); font-family: "open-sans"; font-weight: 700; font-style: italic; }
+
+@font-face { src: url("../fonts/open-sans/open-sans-v28-latin_cyrillic-800.woff2") format("woff2"); font-family: "open-sans"; font-weight: 800; font-style: normal; }
+@font-face { src: url("../fonts/open-sans/open-sans-v28-latin_cyrillic-800italic.woff2") format("woff2"); font-family: "open-sans"; font-weight: 800; font-style: italic; }
+
+/**/
+/**/
+@font-face { src: url("../fonts/montserrat/montserrat-v23-latin_cyrillic-300.woff2") format("woff2"); font-family: "montserrat"; font-weight: 300; font-style: normal; }
+@font-face { src: url("../fonts/montserrat/montserrat-v23-latin_cyrillic-300italic.woff2") format("woff2"); font-family: "montserrat"; font-weight: 300; font-style: italic; }
+
+@font-face { src: url("../fonts/montserrat/montserrat-v23-latin_cyrillic-regular.woff2") format("woff2"); font-family: "montserrat"; font-weight: 400; font-style: normal; }
+@font-face { src: url("../fonts/montserrat/montserrat-v23-latin_cyrillic-italic.woff2") format("woff2"); font-family: "montserrat"; font-weight: 400; font-style: italic; }
+
+@font-face { src: url("../fonts/montserrat/montserrat-v23-latin_cyrillic-500.woff2") format("woff2"); font-family: "montserrat"; font-weight: 500; font-style: normal; }
+@font-face { src: url("../fonts/montserrat/montserrat-v23-latin_cyrillic-500italic.woff2") format("woff2"); font-family: "montserrat"; font-weight: 500; font-style: italic; }
+
+@font-face { src: url("../fonts/montserrat/montserrat-v23-latin_cyrillic-600.woff2") format("woff2"); font-family: "montserrat"; font-weight: 600; font-style: normal; }
+@font-face { src: url("../fonts/montserrat/montserrat-v23-latin_cyrillic-600italic.woff2") format("woff2"); font-family: "montserrat"; font-weight: 600; font-style: italic; }
+
+@font-face { src: url("../fonts/montserrat/montserrat-v23-latin_cyrillic-700.woff2") format("woff2"); font-family: "montserrat"; font-weight: 700; font-style: normal; }
+@font-face { src: url("../fonts/montserrat/montserrat-v23-latin_cyrillic-700italic.woff2") format("woff2"); font-family: "montserrat"; font-weight: 700; font-style: italic; }
+
+@font-face { src: url("../fonts/montserrat/montserrat-v23-latin_cyrillic-800.woff2") format("woff2"); font-family: "montserrat"; font-weight: 800; font-style: normal; }
+@font-face { src: url("../fonts/montserrat/montserrat-v23-latin_cyrillic-800italic.woff2") format("woff2"); font-family: "montserrat"; font-weight: 800; font-style: italic; }
