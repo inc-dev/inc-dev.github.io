@@ -1,19 +1,21 @@
 <!doctype html>
 <html>
  <head>
-  <title>canvasExample</title>
+        <title>canvas</title>
 	<meta charset='utf-8' />
-	<title>Inc-Dev</title>
 	<meta name="description" content="Simple Starter Description">
         <link rel="icon" href="images/favicon.png">
 	<link rel="stylesheet" href="css/main.css">
  </head>
  <body>
-  <canvas height='320' width='480' id='example'>Обновите браузер</canvas>
+  <canvas class='canvasFullScreen' id='myCanvas'>Обновите браузер</canvas>
    <script>
-    var example = document.getElementById("example"),
+    var example = document.getElementById("myCanvas"),
     ctx = example.getContext('2d');
-    ctx.fillRect(0, 0, example.width, example.height);
+    ctx.fillRect(5, 5, myCanvas.width-10, myCanvas.height-10);
+    ctx.fillStyle = "rgb(255,165,0)";
+    ctx.fillText("Hello world", 10, 50);
+
   </script>
  </body>
 </html>
