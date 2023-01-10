@@ -7,15 +7,16 @@
         <link rel="icon" href="images/favicon.png">
 	<link rel="stylesheet" href="css/main.css">
  </head>
- <body class='canvas_container'>
-  <canvas class='canvas_element' id='myCanvas' width="300" height="300">Обновите браузер</canvas>
-   <script>
+ <body>
 
+  <canvas class='canvasFullScreen' id='myCanvas'>Обновите браузер</canvas>
+   <script>
     var example = document.getElementById("myCanvas"),
     ctx = example.getContext('2d');
     ctx.fillRect(5, 5, myCanvas.width-10, myCanvas.height-10);
     ctx.fillStyle = "rgb(255,165,0)";
     ctx.fillText("Hello world", 10, 50);
+
   </script>
  </body>
 </html>
