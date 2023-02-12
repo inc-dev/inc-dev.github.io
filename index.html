@@ -1,21 +1,39 @@
-<!doctype html>
-<html>
- <head>
-        <title>canvas</title>
-	<meta charset='utf-8' />
-	<meta name="description" content="Simple Starter Description">
-        <link rel="icon" href="images/favicon.png">
-	<link rel="stylesheet" href="css/main.css">
- </head>
- <body class='canvas_container'>
-  <canvas class='canvas_element' id='myCanvas' width="300" height="300">Обновите браузер</canvas>
-   <script>
+<html> 
+ <head> 
+  <meta charset="utf-8">
+  <link rel="icon" href="images/favicon.png">
+  <title>IncDev</title> 
+  <style>
+   * {
+    margin: 0px;
+    padding: 0px;
+    }
+   body {
+    height: 100%;
+    }
+  </style> 
 
-    var example = document.getElementById("myCanvas"),
-    ctx = example.getContext('2d');
-    ctx.fillRect(5, 5, myCanvas.width-10, myCanvas.height-10);
-    ctx.fillStyle = "rgb(255,165,0)";
-    ctx.fillText("Hello world", 10, 50);
-  </script>
- </body>
-</html>
+  <script type="application/javascript">
+   function StartGames() 
+    {
+     // InitGame(MyCanvas);
+      ReSize();
+    } 
+   function ReSize()
+    {
+      SetCanvasSize(document.body.offsetWidth-1,document.body.offsetHeight-1);
+      SetCanvasSize(document.body.offsetWidth,document.body.offsetHeight);
+    }
+   function SetCanvasSize(width,height)
+    {  
+      MyCanvas.width = width;
+      MyCanvas.height = height;
+   }
+  </script> 
+ </head> 
+ <body  onload="StartGames();" onresize="ReSize();"> 
+  <div id=вЂќgameAreaвЂќ>
+    <canvas id="MyCanvas" style="background:green;">We are sorry, your browser doesn't support HTML5!</canvas> 
+  </div>
+ </body> 
+</html> 
