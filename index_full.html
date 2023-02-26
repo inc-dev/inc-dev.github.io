@@ -17,21 +17,24 @@
      // InitGame(MyCanvas);
       ReSize();
     } 
+   var shift=0;
    function ReSize()
     {
       SetCanvasSize(document.body.offsetWidth-1,document.body.offsetHeight-1);
       SetCanvasSize(document.body.offsetWidth,document.body.offsetHeight);
-
+//         SetCanvasSize(document.documentElement.clientWidth, document.documentElement.clientHeight);
     }
    function SetCanvasSize(width,height)
-    { 
-      MyCanvas.width = (width)-9;
-      MyCanvas.height = (height)-9;
-
+    {  
+      MyCanvas.top = shift;
+      MyCanvas.left = shift;
+      MyCanvas.width = Math.floor(width)-shift-shift;
+      MyCanvas.height = Math.floor(height)-shift-shift;
    }   
+//   setInterval(ReSize, 1000);  //top="10" left="10"
   </script> 
  </head> 
- <body  onload="StartGames();" onresize="ReSize();" style="background:#050;"> 
-    <canvas id="MyCanvas"  style="background:green;margin: 4px;">We are sorry, your browser doesn't support HTML5!</canvas> 
+ <body  onload="StartGames();" onresize="ReSize();"> 
+    <canvas id="MyCanvas"  style="background:green;">We are sorry, your browser doesn't support HTML5!</canvas> 
  </body> 
 </html> 
