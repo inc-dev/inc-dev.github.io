@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <style>
+      body 
+       {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            background-color: white;
+       }
+      /* растягиваем canvas на всю область просмотра */
+      canvas {
+        width: 100vw;
+        height: 100vh;
+        display: block;
+        background-color: green;
+      }
+    </style>
+
+  </head>
+  <body>
+    <canvas id="MyCanvas" >We are sorry, your browser doesn't support HTML5!</canvas> 
+   <script>
+    var example = document.getElementById("MyCanvas");
+    ctx = example.getContext('2d');
+    //var scale = window.devicePixelRatio;
+    //ctx.scale(scale, scale);
+//canvas.width = Math.floor(size * scale);
+//canvas.height = Math.floor(size * scale);
+    ctx.fillRect(5, 5, myCanvas.width-10, myCanvas.height-10);
+    ctx.fillStyle = "rgb(255,165,0)";
+    ctx.fillText("Hello world"+window.devicePixelRatio, 10, 50);
+   
+  </script>
+
+  </body>
+</html>

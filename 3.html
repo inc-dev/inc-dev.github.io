@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+ <head>
+        <title>canvas</title>
+	<meta charset='utf-8' />
+	<meta name="description" content="Simple Starter Description">
+        <link rel="icon" href="images/favicon.png">
+	<link rel="stylesheet" href="css/main.css">
+    <style>
+      body 
+       {
+            margin: 0px;
+            padding: 0px;
+        width: 100vw;
+        height: 100vh;
+
+            background-color: white;
+       }
+      /* раст€гиваем canvas на всю область просмотра */
+       .div_canvas{
+        width: 100vw;
+        height: 100vh;
+        display: block;
+        background-color: grey;
+
+       }
+      canvas {
+            margin: 0px;
+            padding: 0px;
+            display: block;
+
+            background-color: green;
+      }
+    </style>
+  <script type="application/javascript">
+   function StartGames() 
+    {
+     // InitGame(MyCanvas);
+      ReSize();
+    } 
+   function ReSize()
+    {
+      SetCanvasSize(document.body.offsetWidth-9,document.body.offsetHeight-9);
+      SetCanvasSize(document.body.offsetWidth,document.body.offsetHeight);
+
+
+    }
+   function SetCanvasSize(width,height)
+    { 
+      myCanvas.width = (width);
+      myCanvas.height = (height);
+      draw();
+   } 
+   function draw(){
+    var example = document.getElementById("myCanvas"),
+    ctx = example.getContext('2d');
+    var scale =  window.devicePixelRatio;
+//    ctx.scale(scale, scale);
+//canvas.width = Math.floor(size * scale);
+//canvas.height = Math.floor(size * scale);
+    ctx.fillRect(5, 5, myCanvas.width-10, myCanvas.height-10);
+    ctx.fillStyle = "rgb(255,165,0)";
+    ctx.fillText("Hello world"+window.devicePixelRatio, 10, 50);
+
+    }  
+  </script> 
+
+ </head>
+ <body  onresize="ReSize();" >
+     <canvas  id='myCanvas'>ќбновите браузер</canvas>
+   <script>
+      draw();
+  </script>
+ </body>
+</html>
