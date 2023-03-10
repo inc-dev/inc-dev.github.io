@@ -1,63 +1,52 @@
 <html>
  <head>
-        <title>canvas</title>
-	<meta charset='utf-8' />
-	<meta name="description" content="Simple Starter Description">
-        <link rel="icon" href="images/favicon.png">
-	<link rel="stylesheet" href="css/main.css">
+    <title>Сanvas</title>
+    <meta charset='utf-8' />
+    <meta name="description" content="Simple Starter Description">
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="css/main.css">
     <style>
-            html,
-            body {
+       html, body {
               width: 100%;
               height: 100%;
               margin: 0px;
               border: 0;
               overflow: hidden;
-              /*  Disable scrollbars */
               display: block;
-              /* No floating content on sides */
             }
     </style>
-  <script type="application/javascript">
-   function Start()
-    {
-      ReSize();
-    }
 
-   function ReSize()
-    {
-      SetCanvasSize(window.innerWidth,window.innerHeight);
-    }
-   function SetCanvasSize(width,height)
-    { 
-      myCanvas.style.width = width + "px";
-      myCanvas.style.height = height + "px";
-      myCanvas.width = Math.floor(width * window.devicePixelRatio);
-      myCanvas.height = Math.floor(height * window.devicePixelRatio);
-      draw();
-   } 
-
-   function draw(){
-    var canvas = document.getElementById("myCanvas"),
-    ctx = canvas.getContext('2d');
-
-    var scale = window.devicePixelRatio;
-    var width = Math.floor(myCanvas.width / scale);
-    var height = Math.floor(myCanvas.height / scale);
-    ctx.scale(scale,scale);     
-
-    ctx.fillRect(5, 5, width-10, height-10);
-    ctx.fillStyle = "rgb(255,165,0)";
-    ctx.font = '18px Arial';
-    ctx.fillText("Hello world"+window.devicePixelRatio, 10, 50);
-
-    }  
-  </script> 
+    <script type="application/javascript">
+       var canvas_scale = 1;
+       var canvas_width = 200;
+       var canvas_height = 200;
+       var canvas;
+       var ctx;
+       function Start(){ ReSize();  }
+       function ReSize(){ SetCanvasSize(window.innerWidth,window.innerHeight); }
+       function SetCanvasSize(width,height)
+        { 
+          myCanvas.style.width = width + "px";
+          myCanvas.style.height = height + "px";
+          myCanvas.width = Math.floor(width * window.devicePixelRatio);
+          myCanvas.height = Math.floor(height * window.devicePixelRatio);
+          canvas_scale = window.devicePixelRatio;
+          canvas_width = Math.floor( myCanvas.width / canvas_scale );
+          canvas_height = Math.floor( myCanvas.height / canvas_scale );
+          draw();
+       } 
+       function draw(){
+          ctx = myCanvas.getContext('2d');
+          ctx.scale(canvas_scale,canvas_scale);     
+          ctx.fillStyle = "#222";
+          ctx.fillRect(0, 0, canvas_width+1, canvas_height+1);                               
+          ctx.fillStyle = "rgb(255,165,0)";
+          ctx.font = '18px Arial ';//18px 
+          ctx.fillText("Hello world"+window.devicePixelRatio, 10, 30);
+        }  
+    </script> 
  </head>
  <body  onresize="ReSize();" onload="Start()">
      <canvas  id='myCanvas' style='position:absolute; left:0px; top:0px;'>Обновите браузер</canvas>
-   <script>
-      draw();
-  </script>
  </body>
 </html>
