@@ -21,6 +21,8 @@
              canvas_scale : 1,   
              canvas_width : 200,  
              canvas_height : 200,
+             canvas_scale_width : 200,  
+             canvas_scale_height : 200,
              last_event:"",
              draw: function(){
                 this.ctx.save(); 
@@ -84,11 +86,13 @@
         { 
           myCanvas.style.width = width + "px";
           myCanvas.style.height = height + "px";
-          myCanvas.width = Math.floor(width * window.devicePixelRatio);
-          myCanvas.height = Math.floor(height * window.devicePixelRatio);
+          myCanvas.width = Math.round(width * window.devicePixelRatio);
+          myCanvas.height = Math.round(height * window.devicePixelRatio);
           app.canvas_scale = window.devicePixelRatio;
-          app.canvas_width = Math.floor( myCanvas.width / app.canvas_scale );
-          app.canvas_height = Math.floor( myCanvas.height / app.canvas_scale );
+          app.canvas_width = myCanvas.width;
+          app.canvas_height = myCanvas.height;
+          app.canvas_scale_width = Math.round( myCanvas.width / app.canvas_scale );
+          app.canvas_scale_height = Math.round( myCanvas.height / app.canvas_scale );
           app.ctx = myCanvas.getContext('2d');
        } 
       function render() {
