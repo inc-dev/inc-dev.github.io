@@ -27,9 +27,9 @@
                 this.ctx.scale(this.canvas_scale,this.canvas_scale);     
                 this.ctx.fillStyle = "#222";
                 this.ctx.fillRect(0, 0, this.canvas_width+1, this.canvas_height+1);                               
-                this.ctx.fillStyle = "rgb(255,165,0)";
+                this.ctx.fillStyle = "rgb(64,64,64)";
                 this.ctx.font = '18px Arial ';//18px 
-                this.ctx.fillText("Hello world "+window.devicePixelRatio, 10, 30);
+                this.ctx.fillText("Hello world "+(window.devicePixelRatio*100)+"% "+this.last_event, 10, 30);
                 this.ctx.restore(); 
                },  
              mousedown:function(event){
