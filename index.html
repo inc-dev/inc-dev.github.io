@@ -15,12 +15,14 @@
               display: block;
             }
     </style>
+
     <script type="application/javascript">
        var app={
              canvas_scale : 1,   
              canvas_width : 200,  
              canvas_height : 200,
-             draw: function (){
+             last_event:"",
+             draw: function(){
                 this.ctx.save(); 
                 this.ctx.scale(this.canvas_scale,this.canvas_scale);     
                 this.ctx.fillStyle = "#222";
@@ -29,9 +31,54 @@
                 this.ctx.font = '18px Arial ';//18px 
                 this.ctx.fillText("Hello world "+window.devicePixelRatio, 10, 30);
                 this.ctx.restore(); 
-               }  
+               },  
+             mousedown:function(event){
+                  if (event.which == 1)      this.last_event = "нажата левая кнопка мыши";
+                  else if (event.which == 2) this.last_event = "нажата средняя кнопка мыши";
+                  else if (event.which == 3) this.last_event = "нажата правая кнопка мыши";
+               },      
+             mouseup:function(event){
+                  if (event.which == 1)      this.last_event = "отпущена левая кнопка мыши";
+                  else if (event.which == 2) this.last_event = "отпущена средняя кнопка мыши";
+                  else if (event.which == 3) this.last_event = "отпущена правая кнопка мыши";
+               },
+             mousemove:function(event){
+                  this.last_event = "";
+                  if (event.which == 1)      this.last_event = "нажата левая кнопка мыши";
+                  else if (event.which == 2) this.last_event = "нажата средняя кнопка мыши";
+                  else if (event.which == 3) this.last_event = "нажата правая кнопка мыши";
+                  this.last_event += ", двигается("+event.pageX+","+event.pageY+")";
+               },
+             keydown:function(event){
+                this.last_event = "клавиша "+event.keyCode+" нажата";
+                if(event.shiftKey) this.last_event += " & shift";
+                if(event.ctrlKey)  this.last_event += " & ctrl";
+                if(event.altKey)   this.last_event += " & alt";
+                if(event.metaKey)  this.last_event += " & meta";
+              },
+             keyup:function(event){
+                this.last_event = "клавиша "+event.keyCode+" отпущена";
+              },
+             keypress:function(event){
+                this.last_event = "клавиша символ "+event.charCode+" нажата";
+              },
+             mousewheel:function(event){
+                this.last_event = "колесико  "+event.deltaY;
+              }
+
             }; 
-       function Start(){ ReSize(); render(); }
+       function Start()
+           { 
+              addEventListener("mousedown",(event) => { app.mousedown(event); });
+              addEventListener("mouseup",  (event) => { app.mouseup(event);   });
+              addEventListener("mousemove",(event) => { app.mousemove(event); });
+              addEventListener("keydown",  (event) => { app.keydown(event);   });
+              addEventListener("keyup",    (event) => { app.keyup(event);     });
+              addEventListener("keypress", (event) => { app.keypress(event);  });
+              addEventListener("wheel",    (event) => { app.mousewheel(event);});
+              ReSize(); 
+              render(); 
+           }
        function ReSize(){ SetCanvasSize(window.innerWidth,window.innerHeight); }
        function SetCanvasSize(width,height)
         { 
