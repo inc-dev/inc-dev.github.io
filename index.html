@@ -86,8 +86,8 @@
         { 
           myCanvas.style.width = width + "px";
           myCanvas.style.height = height + "px";
-          myCanvas.width = Math.round(width * window.devicePixelRatio);
-          myCanvas.height = Math.round(height * window.devicePixelRatio);
+          myCanvas.width = Math.floor(width * window.devicePixelRatio);
+          myCanvas.height = Math.floor(height * window.devicePixelRatio);
           app.canvas_scale = window.devicePixelRatio;
           app.canvas_width = myCanvas.width;
           app.canvas_height = myCanvas.height;
