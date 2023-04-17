@@ -92,10 +92,10 @@
           myCanvas.width = Math.floor(width * window.devicePixelRatio);
           myCanvas.height = Math.floor(height * window.devicePixelRatio);
           app.canvas_scale = window.devicePixelRatio;
-          app.canvas_width = Math.round( myCanvas.width / app.canvas_scale );
-          app.canvas_height = Math.round( myCanvas.height / app.canvas_scale );
-          app.canvas_scale_width = myCanvas.width;
-          app.canvas_scale_height = myCanvas.height;
+          app.canvas_width = myCanvas.width;
+          app.canvas_height = myCanvas.height;
+          app.canvas_scale_width = Math.round( myCanvas.width / app.canvas_scale );
+          app.canvas_scale_height = Math.round( myCanvas.height / app.canvas_scale );
           app.ctx = myCanvas.getContext('2d');
        } 
       function render() {
