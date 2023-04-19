@@ -4,11 +4,12 @@
     var lineWidth = 2;//this.canvas_scale
     var ctx = this.ctx; 
     var shift = 0; //0.5 0
+    var fontShift = 0.0; //0.5 0
     ctx.save(); 
 
-//    ctx.scale(this.canvas_scale,this.canvas_scale);     
-//    width = this.canvas_scale_width;
-//    height = this.canvas_scale_height;
+    ctx.scale(this.canvas_scale,this.canvas_scale);     
+    width = this.canvas_scale_width;
+    height = this.canvas_scale_height;
 
 
     ctx.fillStyle = "#080808";
@@ -31,7 +32,23 @@
     ctx.fillStyle = "#6fd594";
 
     ctx.font = 'normal 400 32px sofia';//Arial roboto sofia
-    ctx.fillText("Hello world "+(window.devicePixelRatio*100)+"% "+this.last_event, 15, 42);
+    ctx.fillText("Hello world "+(window.devicePixelRatio*100)+"% "+this.last_event, 15+fontShift, 42);
+
+    ctx.font = '32px roboto';//Arial roboto sofia
+    ctx.fillText("Hello world "+(window.devicePixelRatio*100)+"% "+this.last_event, 15+fontShift, 42+40);
+
+
+
+
+    ctx.fillStyle = "#fff";
+    ctx.fillRect(10+shift, 310+shift, 1400, 200);
+
+    ctx.fillStyle = "#000";
+    ctx.font = 'normal 400 2em sofia';//Arial roboto sofia
+    ctx.fillText("Hello world "+(window.devicePixelRatio*100)+"% "+this.last_event, 15, 42+300+10);//+fontShift
+
+
+
     ctx.restore(); 
    }  
 
