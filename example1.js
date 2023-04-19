@@ -29,7 +29,8 @@
     ctx.stroke();
     //ctx.fillStyle = "rgb(255,165,0)";
     ctx.fillStyle = "#6fd594";
-    ctx.font = 'normal 300 32px roboto';//Arial roboto
+
+    ctx.font = 'normal 400 32px sofia';//Arial roboto sofia
     ctx.fillText("Hello world "+(window.devicePixelRatio*100)+"% "+this.last_event, 15, 42);
     ctx.restore(); 
    }  
