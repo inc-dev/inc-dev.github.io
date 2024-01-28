@@ -1,0 +1,20 @@
+<html>
+ <head>
+  <title>rectExample</title>
+  <meta charset='utf-8' />
+ </head>
+ <body>
+  <div>Рисуем</div>
+  <canvas id='myCanvas'>Обновите браузер</canvas>
+  <script>
+    var myCanvas = document.getElementById("myCanvas"),
+    ctx = myCanvas.getContext('2d');
+    myCanvas.width  = 640;
+    myCanvas.height = 480;
+    ctx.fillStyle = '#090909'; // меняем цвет фона
+    ctx.fillRect(4, 4,myCanvas.width-2*4, myCanvas.height-2*4);
+    ctx.strokeStyle = '#2d566c'; // меняем цвет рамки
+    ctx.strokeRect(0, 0, myCanvas.width, myCanvas.height);
+  </script>
+ </body>
+</html>

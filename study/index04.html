@@ -1,0 +1,86 @@
+<html>
+ <head>
+  <title>rectExample</title>
+  <meta charset='utf-8' />
+  <script>
+    var myCanvas = null;
+    var ctx      = null;
+    var x = 101;
+    var y = 125;
+    var maxDx = 5.5;
+    var maxDy = 5.3;
+    var tire  =0.034;
+    var dx = maxDx;
+    var dy = maxDy;
+    var r  = 10;
+    var shift_s = 4;
+    var barX = 100;
+    var barDx = 8;
+    var barWidth=100;
+    var barHeight=10;
+    var barCurDx=0; 
+    function Start()
+    { 
+      myCanvas = document.getElementById("myCanvas"),
+      ctx = myCanvas.getContext('2d');
+      myCanvas.height = 480;
+      myCanvas.width  = 640;
+      Draw();
+    }
+    function Calc(){
+      x+=dx; y+=dy;
+      if(x<r+maxDx+shift_s||x>myCanvas.width-maxDx-shift_s*2)dx=-dx;
+      if(y<r+maxDy+shift_s||y>myCanvas.height-maxDy-shift_s*2){
+        dy=-dy;
+        if(dy>0) dy = maxDy; else dy = -maxDy;
+      }else{
+             dy+=tire; 
+           }   
+      //------------------------    
+      barX+=barCurDx;
+      if(barX<shift_s+1)barX = shift_s+1;
+      if(barX+barWidth>myCanvas.width+3-shift_s*2) barX = myCanvas.width+3-shift_s*2-barWidth; 
+
+    }
+    function Draw()
+    { 
+      Calc();
+      //-------------------------
+      ctx.save(); 
+
+      ctx.fillStyle = '#090909'; // меняем цвет фона
+      ctx.fillRect(shift_s, shift_s,myCanvas.width-2*shift_s, myCanvas.height-2*shift_s);
+      ctx.strokeStyle = '#2d566c'; // меняем цвет рамки
+      ctx.strokeRect(0, 0, myCanvas.width, myCanvas.height);
+      ctx.strokeStyle = '#eee'; 
+      ctx.beginPath();
+      ctx.arc(x,y, r, 0, 2 * Math.PI);
+      ctx.stroke();
+      ctx.fillStyle = '#ddd';
+      ctx.fillRect(barX,myCanvas.height-1-barHeight-shift_s,barWidth, barHeight);
+      ctx.restore(); 
+      //-------------------------
+      requestAnimationFrame(Draw);
+    }
+    function keyDown(event)
+    { 
+       if(event.keyCode==37) barCurDx=-barDx; 
+       if(event.keyCode==39) barCurDx=+barDx; 
+    }
+    function keyUp(event)
+    { 
+       if(event.keyCode==37) barCurDx=0;
+       if(event.keyCode==39) barCurDx=0; 
+    }
+
+    addEventListener("keydown", keyDown);
+    addEventListener("keyup", keyUp);
+  </script>
+ </head>
+ <body onload="Start()">
+
+  <div>Рисуем в динамике и добавляем клавиатуру и улучшаем реакцию</div>
+  <canvas id='myCanvas'>Обновите браузер</canvas>
+
+ </body>
+</html>
