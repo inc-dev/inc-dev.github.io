@@ -57,7 +57,9 @@
       ctx.strokeRect(0, 0, myCanvas.width, myCanvas.height);
       ctx.strokeStyle = '#eee'; 
       ctx.beginPath();
+      ctx.fillStyle = '#eee';
       ctx.arc(x,y, r, 0, 2 * Math.PI);
+      ctx.fill();
       ctx.stroke();
       ctx.fillStyle = '#ddd';
       ctx.fillRect(barX,myCanvas.height-1-barHeight-shift_s,barWidth, barHeight);
