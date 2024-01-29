@@ -45,9 +45,12 @@
       if((x>barX-5)&&(x<barX+barWidth+5))
         if(y>myCanvas.height-maxDy-shift_s*2-barHeight){ dy = -maxDy*1.5; }
     }
+    var oldT=performance.now();
     function Draw()
     { 
       Calc();
+      var t = performance.now()-oldT;
+      oldT = performance.now();
       //-------------------------
       ctx.save(); 
 
@@ -63,10 +66,14 @@
       ctx.stroke();
       ctx.fillStyle = '#ddd';
       ctx.fillRect(barX,myCanvas.height-1-barHeight-shift_s,barWidth, barHeight);
+      ctx.fillText((Math.round(1000/t))+'fps', 10, 20);
+
       ctx.restore(); 
       //-------------------------
       requestAnimationFrame(Draw);
+      
     }
+    //setInterval( Draw, 1000 / 20 );
     function keyDown(event)
     { 
        if(event.keyCode==37) barCurDx=-barDx; 
