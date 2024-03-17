@@ -13,12 +13,12 @@
     var tire  =0.002;
     var dx = maxDx;
     var dy = maxDy;
-    var r  = 10;
+    var r  = 15;
     var shift_s = 4;
 
     var barX = 100;
-    var barDxMax = 1;
-    var barDxTareMax=0.01;
+    var barDxMax = 3;
+    var barDxTareMax=0.04;
     var barDx = 0;
     var barDxTareBlock = false;
 
@@ -28,9 +28,11 @@
     var score=0;
     var scoreMax=0;
 
+    const ball = new Image();
     function Start()
     { 
-      myCanvas = document.getElementById("myCanvas"),
+      ball.src = 'balll.png'; 
+      myCanvas = document.getElementById("myCanvas");
       ctx = myCanvas.getContext('2d');
       myCanvas.height = 480;
       myCanvas.width  = 640;
@@ -69,23 +71,21 @@
     { 
       Calc();
       //-------------------------
-      ctx.save(); 
-
       ctx.fillStyle = '#222'; // меняем цвет фона
       ctx.fillRect(0, 0, myCanvas.width, myCanvas.height);
       ctx.strokeStyle = '#2d566c'; // меняем цвет рамки
       ctx.strokeRect(0, 0, myCanvas.width, myCanvas.height);
       ctx.strokeStyle = '#eee'; 
-      ctx.beginPath();
+/*      ctx.beginPath();
       ctx.fillStyle = '#eee';
       ctx.arc(Math.round(x),Math.round(y), r, 0, 2 * Math.PI);
-      ctx.fill();
+      ctx.fill();*/
+      ctx.drawImage(ball, Math.round(x)-r,Math.round(y)-r);
       ctx.stroke();
       ctx.fillStyle = '#ddd';
       ctx.fillRect(barX,myCanvas.height-1-barHeight-shift_s,barWidth, barHeight);
-      ctx.font = "italic 30pt Arial";
-      ctx.fillText('Счет:'+score+'/'+scoreMax , 10, 40);  
-      ctx.restore(); 
+      ctx.font = "16pt Arial";//italic 
+      ctx.fillText('Счет:'+score+'/'+scoreMax , 10, 30);  
       //-------------------------
       requestAnimationFrame(Draw);//setInterval( Draw, 1000 / 20 );
     }
