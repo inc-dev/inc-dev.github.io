@@ -104,7 +104,7 @@
     }
     function touchStart(event)
     { 
-      if(event.changedTouches[0].clientX>320){ barDxTareBlock=true; barDx=+barDxMax; }
+      if(event.changedTouches[0].clientX>window.innerWidth/2){ barDxTareBlock=true; barDx=+barDxMax; }
       else { barDxTareBlock=true; barDx=-barDxMax; }
     }
     function touchEnd(event)
@@ -120,8 +120,8 @@
   </script>
  </head>
  <body onload="Start()">
-  <div>Добавляем реакцию на панель</div>
+  <center>
   <canvas id='myCanvas'>Обновите браузер</canvas>
-
+  </center>
  </body>
 </html>
