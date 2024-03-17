@@ -1,0 +1,127 @@
+<html>
+ <head>
+  <title>Ping pong</title>
+  <meta charset='utf-8' />
+  <script>
+    var myCanvas = null;
+    var ctx      = null;
+
+    var x = 101;
+    var y = 125;
+    var maxDx = 1;
+    var maxDy = 1;
+    var tire  =0.002;
+    var dx = maxDx;
+    var dy = maxDy;
+    var r  = 10;
+    var shift_s = 4;
+
+    var barX = 100;
+    var barDxMax = 1;
+    var barDxTareMax=0.01;
+    var barDx = 0;
+    var barDxTareBlock = false;
+
+    var barWidth=100;
+    var barHeight=10;
+
+    var score=0;
+    var scoreMax=0;
+
+    function Start()
+    { 
+      myCanvas = document.getElementById("myCanvas"),
+      ctx = myCanvas.getContext('2d');
+      myCanvas.height = 480;
+      myCanvas.width  = 640;
+      Draw();
+    }
+    function Calc(){
+      x+=dx; y+=dy;
+      if(x<r+maxDx)dx=maxDx;
+      if(x>myCanvas.width-maxDx-r)dx=-maxDx;
+      if(y<r+maxDy)dy=maxDy;
+      if(y>myCanvas.height-maxDy-r){ dy=-maxDy; score = 0; }
+      dy+=tire;                               //притяжение
+      //------------------------    
+      if(!barDxTareBlock){
+         if(Math.abs(barDx)<barDxTareMax*2) barDx = 0;
+        else
+         if(barDx>0)barDx-=barDxTareMax; 
+          else 
+         if(barDx<0)barDx+=barDxTareMax;
+      }
+      barX+=barDx;
+      if(barX<shift_s+1)barX = shift_s+1;
+      if(barX+barWidth>myCanvas.width+3-shift_s*2) barX = myCanvas.width+3-shift_s*2-barWidth; 
+      //------------------------    
+      if((x>barX-5)&&(x<barX+barWidth+5))
+        if(y>myCanvas.height-maxDy-shift_s*3-barHeight)
+          if(dy>0)
+           {
+             dy = -maxDy*1.5; 
+             score++;
+             if(scoreMax<score) scoreMax = score;
+           }
+    }
+    var oldT=performance.now();
+    function Draw()
+    { 
+      Calc();
+      var t = performance.now()-oldT;
+      oldT = performance.now();
+      //-------------------------
+      ctx.save(); 
+
+      ctx.fillStyle = '#222'; // меняем цвет фона
+      ctx.fillRect(0, 0, myCanvas.width, myCanvas.height);
+      ctx.strokeStyle = '#2d566c'; // меняем цвет рамки
+      ctx.strokeRect(0, 0, myCanvas.width, myCanvas.height);
+      ctx.strokeStyle = '#eee'; 
+      ctx.beginPath();
+      ctx.fillStyle = '#eee';
+      ctx.arc(Math.round(x),Math.round(y), r, 0, 2 * Math.PI);
+      ctx.fill();
+      ctx.stroke();
+      ctx.fillStyle = '#ddd';
+      ctx.fillRect(barX,myCanvas.height-1-barHeight-shift_s,barWidth, barHeight);
+//      ctx.fillText((Math.round(1000/t))+'fps', 10, 20);  
+      ctx.font = "italic 30pt Arial";
+      ctx.fillText('Score:'+score+'/'+scoreMax , 10, 50);  
+      ctx.restore(); 
+      //-------------------------
+      requestAnimationFrame(Draw);//setInterval( Draw, 1000 / 20 );
+    }
+    function keyDown(event)
+    { 
+       if(event.keyCode==37){ barDxTareBlock=true; barDx=-barDxMax; }
+       if(event.keyCode==39){ barDxTareBlock=true; barDx=+barDxMax; }
+    }
+    function keyUp(event)
+    { 
+       if(event.keyCode==37){ barDxTareBlock=false; }
+       if(event.keyCode==39){ barDxTareBlock=false; }
+    }
+    function touchStart(event)
+    { 
+      if(event.changedTouches[0].clientX>window.innerWidth/2){ barDxTareBlock=true; barDx=+barDxMax; }
+      else { barDxTareBlock=true; barDx=-barDxMax; }
+    }
+    function touchEnd(event)
+    { 
+       barDxTareBlock=false; 
+    }
+
+    addEventListener("keydown", keyDown);
+    addEventListener("keyup", keyUp);
+    addEventListener("touchstart", touchStart);
+    addEventListener("touchend", touchEnd);
+
+  </script>
+ </head>
+ <body onload="Start()">
+  <center>
+  <canvas id='myCanvas'>Обновите браузер</canvas>
+  </center>
+ </body>
+</html>
