@@ -68,8 +68,6 @@
     function Draw()
     { 
       Calc();
-      var t = performance.now()-oldT;
-      oldT = performance.now();
       //-------------------------
       ctx.save(); 
 
@@ -85,7 +83,6 @@
       ctx.stroke();
       ctx.fillStyle = '#ddd';
       ctx.fillRect(barX,myCanvas.height-1-barHeight-shift_s,barWidth, barHeight);
-//      ctx.fillText((Math.round(1000/t))+'fps', 10, 20);  
       ctx.font = "italic 30pt Arial";
       ctx.fillText('Score:'+score+'/'+scoreMax , 10, 50);  
       ctx.restore(); 
