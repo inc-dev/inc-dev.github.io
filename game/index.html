@@ -84,7 +84,7 @@
       ctx.fillStyle = '#ddd';
       ctx.fillRect(barX,myCanvas.height-1-barHeight-shift_s,barWidth, barHeight);
       ctx.font = "italic 30pt Arial";
-      ctx.fillText('Score:'+score+'/'+scoreMax , 10, 50);  
+      ctx.fillText('Счет:'+score+'/'+scoreMax , 10, 40);  
       ctx.restore(); 
       //-------------------------
       requestAnimationFrame(Draw);//setInterval( Draw, 1000 / 20 );
@@ -116,8 +116,9 @@
 
   </script>
  </head>
- <body onload="Start()">
+ <body onload="Start()" style="background-color: #000;">
   <center>
+  <br><br>
   <canvas id='myCanvas'>Обновите браузер</canvas>
   </center>
  </body>
