@@ -8,8 +8,8 @@
 
     var x = 101;
     var y = 125;
-    var maxDx = 1;
-    var maxDy = 1;
+    var maxDx = 2;
+    var maxDy = 2;
     var tire  =0.002;
     var dx = maxDx;
     var dy = maxDy;
@@ -66,7 +66,6 @@
              if(scoreMax<score) scoreMax = score;
            }
     }
-    var oldT=performance.now();
     function Draw()
     { 
       Calc();
@@ -76,18 +75,14 @@
       ctx.strokeStyle = '#2d566c'; // меняем цвет рамки
       ctx.strokeRect(0, 0, myCanvas.width, myCanvas.height);
       ctx.strokeStyle = '#eee'; 
-/*      ctx.beginPath();
-      ctx.fillStyle = '#eee';
-      ctx.arc(Math.round(x),Math.round(y), r, 0, 2 * Math.PI);
-      ctx.fill();*/
       ctx.drawImage(ball, Math.round(x)-r,Math.round(y)-r);
       ctx.stroke();
       ctx.fillStyle = '#ddd';
       ctx.fillRect(barX,myCanvas.height-1-barHeight-shift_s,barWidth, barHeight);
       ctx.font = "16pt Arial";//italic 
-      ctx.fillText('Счет:'+score+'/'+scoreMax , 10, 30);  
+      ctx.fillText('Счет: '+score+' Рекорд: '+scoreMax , 10, 30);  
       //-------------------------
-      requestAnimationFrame(Draw);//setInterval( Draw, 1000 / 20 );
+      requestAnimationFrame(Draw);
     }
     function keyDown(event)
     { 

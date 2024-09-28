@@ -1,3 +1,15 @@
+ var mouse_x = 0;
+ var mouse_y = 0;
+ app.mousemove=function(event){
+                  this.last_event = "";
+                  if (event.which == 1)      this.last_event = "нажата левая кнопка мыши";
+                  else if (event.which == 2) this.last_event = "нажата средняя кнопка мыши";
+                  else if (event.which == 3) this.last_event = "нажата правая кнопка мыши";
+                  this.last_event += ", двигается("+event.pageX+","+event.pageY+")";
+                  mouse_x = event.pageX;
+                  mouse_y = event.pageY;
+               }
+
  app.draw = function(){
     var width = this.canvas_width;
     var height = this.canvas_height;
@@ -47,7 +59,24 @@
     ctx.font = 'normal 400 2em sofia';//Arial roboto sofia
     ctx.fillText("Hello world "+(window.devicePixelRatio*100)+"% "+this.last_event, 15, 42+300+10);//+fontShift
 
+    var sh=200;
+    for (let i = 0; i < 100; i++) { 
 
+    var shift=i*3;
+    ctx.fillStyle = "#080808";
+    ctx.fillRect(mouse_x+shift,mouse_y+shift, sh, sh);
+    
+    ctx.lineWidth = lineWidth;
+    ctx.strokeStyle = "#2d566c";
+    ctx.beginPath();
+    ctx.rect(mouse_x+shift,mouse_y+shift, sh, sh);
+    ctx.stroke();
+
+
+
+
+
+    }
 
     ctx.restore(); 
    }  
