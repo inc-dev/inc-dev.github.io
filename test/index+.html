@@ -1,0 +1,41 @@
+<html>
+ <head>
+  <title>rectExample</title>
+  <meta charset='utf-8' />
+
+  <script>
+  //var canvas = document.getElementById('canvas');
+  //var ctx = canvas.getContext('2d');
+  var myCanvas = document.getElementById("canvas");
+  var ctx = myCanvas.getContext('2d');
+
+
+  var video = document.getElementById('video');
+  var video2 = document.getElementById('video2');
+
+  video.addEventListener('play', function() {
+    var $this = this; //cache
+    (function loop() {
+      if (!$this.paused && !$this.ended) {
+        ctx.drawImage($this, 0, 0);
+        setTimeout(loop, 1000 / 30); // drawing at 30fps
+      }
+    })();
+  }, 0);
+
+
+  </script>
+
+
+ </head>
+
+
+  <div id="theater">
+    <video id="video" src="https://www.ixbt.com/img/00/02/25/27/MIR2092.MP4" controls="false"  width="640" height="480"></video>
+    <video id="video2" src="https://www.ixbt.com/img/00/02/25/27/MIR2092.MP4" controls="false"  width="640" height="480"></video>
+    <canvas id="canvas" width="640" height="480"></canvas>
+    <label>
+      <br />Try to play me :)</label>
+    <br />
+  </div>
+<html>

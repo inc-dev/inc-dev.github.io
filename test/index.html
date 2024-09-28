@@ -1,0 +1,49 @@
+<html>
+ <head>
+  <title>test</title>
+  <meta charset='utf-8' />
+ </head>
+ <body>
+    <video id="video" src="https://www.ixbt.com/img/00/02/25/27/MIR2092.MP4" controls="false"  width="640" height="480"></video>
+    <video id="video2" src="https://www.ixbt.com/img/00/02/25/27/MIR2092.MP4" controls="false"  width="640" height="480"></video>
+    <br>
+  <div>Рисуем</div>
+  <canvas id='myCanvas'>Обновите браузер</canvas>
+  <script>
+    var myCanvas = document.getElementById("myCanvas"),
+    ctx = myCanvas.getContext('2d');
+    myCanvas.width  = 640;
+    myCanvas.height = 480;
+    function Draw(){ 
+      //-------------------------
+      ctx.fillStyle = '#090909'; // меняем цвет фона
+      ctx.fillRect(0,0,myCanvas.width,myCanvas.height);
+      requestAnimationFrame(Draw);
+    }
+//    Draw();
+  video.addEventListener('play', function() {
+    var $this = this; //cache
+    (function loop() {
+      if (!$this.paused && !$this.ended) {
+        ctx.drawImage($this, 0, 0);
+        setTimeout(loop, 1000 / 30); // drawing at 30fps
+      }
+    })();
+  }, 0);
+/*  video2.addEventListener('play', function() {
+    var $this = this; //cache
+    (function loop() {
+      if (!$this.paused && !$this.ended) {
+        ctx.drawImage($this, 30, 30);
+        setTimeout(loop, 1000 / 30); // drawing at 30fps
+      }
+    })();
+  }, 0);
+    <video id="video2" src="https://www.ixbt.com/img/00/02/25/27/MIR2092.MP4" controls="false"  width="640" height="480"></video>
+     <br>
+*/
+
+  </script>
+
+ </body>
+</html>
